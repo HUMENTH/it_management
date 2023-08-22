@@ -34,6 +34,7 @@ jobs:
     - name: Install Frappe
       run: |
         bench init frappe-bench
+        cd frappe-bench
         bench get-app --branch version-14 frappe
         bench new-site test.local
         bench --site test.local install-app frappe

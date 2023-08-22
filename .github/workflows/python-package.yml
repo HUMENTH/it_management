@@ -33,9 +33,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install Frappe
       run: |
-        bench init frappe-bench
-        cd frappe-bench
-        bench new-site test.local
+        bench init frappe-bench --frappe-branch version-14
+        cd ~/frappe-bench/
+        bench new-site test.local --db-root-password root --admin-password admin@123 
         bench --site test.local install-app frappe
     - name: Lint with flake8
       run: |

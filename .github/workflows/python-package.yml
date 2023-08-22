@@ -35,7 +35,7 @@ jobs:
       run: |
         bench init frappe-bench
         cd frappe-bench
-        bench get-app --branch version-14 frappe
+        bench get-app --branch version-14 frappe --force
         bench new-site test.local
         bench --site test.local install-app frappe
     - name: Lint with flake8

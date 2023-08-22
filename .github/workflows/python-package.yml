@@ -35,8 +35,10 @@ jobs:
       run: |
         bench init frappe-bench --frappe-branch version-14
         cd frappe-bench
-        bench new-site test.local --db-root-password root --admin-password admin@123 
-        bench --site test.local install-app frappe
+        bench get-app erpnext --branch version-14
+        bench get-app payments --branch version-14
+        bench new-site test.local --db-root-password root --admin-password test@123 
+        bench --site test.local install-app erpnext
     - name: Lint with flake8
       run: |
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
